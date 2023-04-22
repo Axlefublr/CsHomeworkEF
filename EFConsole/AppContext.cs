@@ -13,6 +13,6 @@ public class AppContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Ваша строка подключения к БД");
+        optionsBuilder.UseSqlServer("Data Source=LAPTOP-FSDVNK6M;Database=EF;Trusted_Connection=True;");
     }
 }
