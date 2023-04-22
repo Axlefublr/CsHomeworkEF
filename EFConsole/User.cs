@@ -7,6 +7,5 @@ public class User
     public string Email { get; set; }
     public string Role { get; set; }
 
-    public int CompanyId { get; set; }
-    public Company Company { get; set; }
+    public UserCredential UserCredential { get; set; }
 }
