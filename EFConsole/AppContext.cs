@@ -6,11 +6,10 @@ public class AppContext : DbContext
 {
     public DbSet<User> Users { get; set; }
 
-    public DbSet<UserCredential> UserCredentials { get; set; }
+    public DbSet<Book> Books { get; set; }
 
     public AppContext()
     {
-        Database.EnsureDeleted();
         Database.EnsureCreated();
     }
 
