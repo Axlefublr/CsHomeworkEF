@@ -61,4 +61,12 @@ public class BookRepository
         );
     }
 
+    public Book GetMostRecentBook()
+    {
+        return (Book)db.Books
+            .Select(book => book)
+            .OrderByDescending(book => book.ReleaseYear)
+            .Take(1);
+    }
+
 }
