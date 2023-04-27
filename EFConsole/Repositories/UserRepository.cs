@@ -28,4 +28,12 @@ public class UserRepository
         db.Users.Remove(user);
     }
 
+    public void UpdateName(int id, string name)
+    {
+        User user = (User)db.Users
+            .Where(user => user.Id == id)
+            .Select(user => user);
+        user.Name = name;
+    }
+
 }
