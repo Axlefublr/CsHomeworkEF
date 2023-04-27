@@ -3,7 +3,7 @@ namespace EFConsole.Repositories;
 public class UserRepository
 {
 
-    private AppContext db;
+    private readonly AppContext db;
 
     public UserRepository(AppContext db)
     {
@@ -14,7 +14,9 @@ public class UserRepository
         .Where(user => user.Id == id)
         .Select(user => user);
 
-    public List<User> GetAllUsers() => db.Users.Select(user => user);
+    public List<User> GetAllUsers() => db.Users
+        .Select(user => user)
+        .ToList();
 
     public void Add(User user) => db.Users.Add(user);
 

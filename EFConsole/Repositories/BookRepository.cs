@@ -3,7 +3,7 @@ namespace EFConsole.Repositories;
 public class BookRepository
 {
 
-    private AppContext db;
+    private readonly AppContext db;
 
     public BookRepository(AppContext db)
     {
@@ -11,10 +11,12 @@ public class BookRepository
     }
 
     public Book GetBookById(int id) => (Book)db.Books
-        .Where(book => book.Id = id)
+        .Where(book => book.Id == id)
         .Select(book => book);
 
-    public List<Book> GetAllBooks() => db.Books.Select(book => book);
+    public List<Book> GetAllBooks() => db.Books
+        .Select(book => book)
+        .ToList();
 
     public void Add(Book book) => db.Books.Add(book);
 
