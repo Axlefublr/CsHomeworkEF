@@ -28,4 +28,15 @@ public class BookRepository
         book.ReleaseYear = releaseYear;
     }
 
+    public List<Book> GetBooksByGenreAndYears(string genre, int startYear, int endYear)
+    {
+        return db.Books
+            .Where(book =>
+                book.Genre == genre
+                && book.ReleaseYear >= startYear
+                && book.ReleaseYear <= endYear
+            ).Select(book => book)
+            .ToList();
+    }
+
 }
