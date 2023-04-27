@@ -52,4 +52,13 @@ public class BookRepository
             .Where(book => book.Genre == genre)
             .Count();
     }
+
+    public bool DoesBookExistByAuthorNameAndTitle(string authorName, string title) // ah yes, java naming
+    {
+        return db.Books.Any(book =>
+            book.AuthorName == authorName
+            && book.Title == title
+        );
+    }
+
 }
