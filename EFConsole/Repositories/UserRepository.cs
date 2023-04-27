@@ -28,4 +28,6 @@ public class UserRepository
         user.Name = name;
     }
 
+    public static int GetBookCount(User user) => user.Books.Count;
+
 }
