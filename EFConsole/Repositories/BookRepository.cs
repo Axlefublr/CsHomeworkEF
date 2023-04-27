@@ -10,9 +10,7 @@ public class BookRepository
         this.db = db;
     }
 
-    public Book GetBookById(int id) => (Book)db.Books
-        .Where(book => book.Id == id)
-        .Select(book => book);
+    public Book GetBookById(int id) => db.Books.FirstOrDefault(book => book.Id == id);
 
     public List<Book> GetAllBooks() => db.Books
         .Select(book => book)

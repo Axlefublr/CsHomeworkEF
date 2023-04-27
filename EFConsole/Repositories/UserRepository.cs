@@ -10,9 +10,7 @@ public class UserRepository
         this.db = db;
     }
 
-    public User GetUserById(int id) => (User)db.Users
-        .Where(user => user.Id == id)
-        .Select(user => user);
+    public User GetUserById(int id) => db.Users.FirstOrDefault(user => user.Id == id);
 
     public List<User> GetAllUsers() => db.Users
         .Select(user => user)
