@@ -69,4 +69,12 @@ public class BookRepository
             .Take(1);
     }
 
+    public List<Book> GetBooksSortedByTitle()
+    {
+        return db.Books
+            .Select(book => book)
+            .OrderBy(book => book.Title)
+            .ToList();
+    }
+
 }
