@@ -10,8 +10,12 @@ public class UserRepository
         this.db = db;
     }
 
-    public User GetUserById(int id)
-    {
-        return (User)db.Users.Where(user => user.Id == id).Select(user => user);
-    }
+    public User GetUserById(int id) => (User)db.Users
+        .Where(user => user.Id == id)
+        .Select(user => user);
+
+    public List<User> GetAllUsers() => db.Users
+        .Select(user => user)
+        .ToList();
+
 }
