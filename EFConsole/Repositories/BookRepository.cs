@@ -77,4 +77,12 @@ public class BookRepository
             .ToList();
     }
 
+    public List<Book> GetBooksSortedByReleaseYearDescending() // the only reason this method's name is so long is because it's so damn specific lol
+    {
+        return db.Books
+            .Select(book => book)
+            .OrderByDescending(book => book.ReleaseYear)
+            .ToList();
+    }
+
 }
