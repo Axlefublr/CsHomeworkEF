@@ -46,4 +46,10 @@ public class BookRepository
             .Count();
     }
 
+    public int GetBookCountByGenre(string genre)
+    {
+        return db.Books
+            .Where(book => book.Genre == genre)
+            .Count();
+    }
 }
