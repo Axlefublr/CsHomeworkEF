@@ -18,4 +18,13 @@ public class UserRepository
         .Select(user => user)
         .ToList();
 
+    public void Add(string name, string email)
+    {
+        db.Users.Add(new User()
+        {
+            Name = name,
+            Email = email
+        });
+    }
+
 }
