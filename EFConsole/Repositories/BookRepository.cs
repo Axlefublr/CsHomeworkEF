@@ -9,4 +9,8 @@ public class BookRepository
     {
         this.db = db;
     }
+    public Book GetBookById(int id) => (Book)db.Books
+        .Where(book => book.Id = id)
+        .Select(book => book);
+
 }
