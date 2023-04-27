@@ -18,4 +18,6 @@ public class BookRepository
 
     public void Add(Book book) => db.Books.Add(book);
 
+    public void Remove(Book book) => db.Books.Remove(book);
+
 }
