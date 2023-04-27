@@ -16,15 +16,9 @@ public class UserRepository
 
     public List<User> GetAllUsers() => db.Users.Select(user => user);
 
-    public void Add(User user)
-    {
-        db.Users.Add(user);
-    }
+    public void Add(User user) => db.Users.Add(user);
 
-    public void Remove(User user)
-    {
-        db.Users.Remove(user);
-    }
+    public void Remove(User user) => db.Users.Remove(user);
 
     public void UpdateName(int id, string name)
     {

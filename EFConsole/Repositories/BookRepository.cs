@@ -16,4 +16,6 @@ public class BookRepository
 
     public List<Book> GetAllBooks() => db.Books.Select(book => book);
 
+    public void Add(Book book) => db.Books.Add(book);
+
 }
