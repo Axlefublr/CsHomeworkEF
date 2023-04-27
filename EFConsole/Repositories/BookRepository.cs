@@ -39,4 +39,11 @@ public class BookRepository
             .ToList();
     }
 
+    public int GetBookCountByAuthorName(string authorName)
+    {
+        return db.Books
+            .Where(book => book.AuthorName == authorName)
+            .Count();
+    }
+
 }
