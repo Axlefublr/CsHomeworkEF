@@ -20,4 +20,12 @@ public class BookRepository
 
     public void Remove(Book book) => db.Books.Remove(book);
 
+    public void UpdateReleaseYear(int id, int releaseYear)
+    {
+        Book book = (Book)db.Books
+            .Where(book => book.Id == id)
+            .Select(book => book);
+        book.ReleaseYear = releaseYear;
+    }
+
 }
