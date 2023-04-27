@@ -18,13 +18,14 @@ public class UserRepository
         .Select(user => user)
         .ToList();
 
-    public void Add(string name, string email)
+    public void Add(User user)
     {
-        db.Users.Add(new User()
-        {
-            Name = name,
-            Email = email
-        });
+        db.Users.Add(user);
+    }
+
+    public void Remove(User user)
+    {
+        db.Users.Remove(user);
     }
 
 }
