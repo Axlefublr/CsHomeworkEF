@@ -14,9 +14,7 @@ public class UserRepository
         .Where(user => user.Id == id)
         .Select(user => user);
 
-    public List<User> GetAllUsers() => db.Users
-        .Select(user => user)
-        .ToList();
+    public List<User> GetAllUsers() => db.Users.Select(user => user);
 
     public void Add(User user)
     {
